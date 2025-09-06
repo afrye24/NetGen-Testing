@@ -30,7 +30,7 @@ The aim of testing was to:
 </div>
 
 ---
-### :dart: Features
+## :dart: Features
 
 - Conducted 50+ trials to test the accuracy and efficiency of the tool
 - Created 10 prompts to test NetGen's ability to comprehend user-based prompts based on security level
