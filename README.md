@@ -10,7 +10,7 @@ The aim of testing was to:
 
 ---
 
-### :camera: Data & Results
+### :camera: Data
 
 <div align="center">
 
@@ -30,12 +30,16 @@ The aim of testing was to:
 </div>
 
 ---
-
+## :rocket: Results
+- NetGen was found to have limited comprehension of user-based prompts
+- Topologies were found to be generated randomly unless prompts were extremes of "insecure or secure"
+- Findings were given to the development team to improve documentation
+------
 ### :dart: Features
 
-- 50+ trials to test the accuracy and efficiency of tool
-- 10 prompts created to test NetGen's ability to comprehend user-based prompts based on security level
-- A graph representing the security levels of the topologies created  
+- Conducted 50+ trials to test the accuracy and efficiency of the tool
+- Created 10 prompts to test NetGen's ability to comprehend user-based prompts based on security level
+- Formed a graph representing the security levels of the topologies created  
 ---
 
 ## :handshake: Contact
@@ -52,8 +56,3 @@ Resources that inspired or supported development:
 - NetGen Team of the Senior Military College Cyber Institute Program at Virginia Tech for developing the tool
 
 ---
-
-## :rocket: Results
-- NetGen was found to have limited comprehension of user-based prompts
-- Topologies were found to be generated randomly unless prompts were extremes of "insecure or secure"
-- Findings were given to the development team to improve documentation
