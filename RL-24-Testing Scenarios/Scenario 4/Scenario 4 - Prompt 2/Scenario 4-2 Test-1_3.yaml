@@ -1,0 +1,114 @@
+subnets: [1, 1, 1]
+topology: [[1, 1, 1, 1],
+           [1, 1, 0, 1],
+           [1, 0, 1, 1],
+           [1, 1, 1, 1]]
+sensitive_hosts:
+  (2, 0): 100
+  (3, 0): 100
+os:
+  - os_0
+  - os_1
+services:
+  - srv_0
+  - srv_1
+  - srv_2
+  - srv_3
+  - srv_4
+processes:
+  - proc_0
+  - proc_1
+  - proc_2
+  - proc_3
+  - proc_4
+exploits:
+  e_srv_2_os_1:
+    service: srv_2
+    os: os_1
+    prob: 0.3
+    cost: 1
+    access: root
+  e_srv_4_os_0:
+    service: srv_4
+    os: os_0
+    prob: 0.3
+    cost: 1
+    access: root
+  e_srv_2_os_0:
+    service: srv_2
+    os: os_0
+    prob: 0.3
+    cost: 1
+    access: root
+  e_srv_3:
+    service: srv_3
+    os: None
+    prob: 0.3
+    cost: 1
+    access: root
+  e_srv_4:
+    service: srv_4
+    os: None
+    prob: 0.3
+    cost: 1
+    access: user
+privilege_escalation:
+  pe_proc_1_os_1:
+    process: proc_1
+    os: os_1
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_4:
+    process: proc_4
+    os: None
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_3_os_0:
+    process: proc_3
+    os: os_0
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_1:
+    process: proc_1
+    os: None
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_3_os_1:
+    process: proc_3
+    os: os_1
+    prob: 1.0
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: os_1
+    services: [srv_2]
+    processes: [proc_0, proc_1]
+  (2, 0):
+    os: os_1
+    services: [srv_0, srv_1, srv_2]
+    processes: [proc_4]
+  (3, 0):
+    os: os_1
+    services: [srv_4]
+    processes: [proc_0, proc_2, proc_4]
+firewall:
+  (0, 1): [srv_2]
+  (0, 2): [srv_2]
+  (0, 3): [srv_4]
+  (1, 0): []
+  (1, 3): [srv_4]
+  (2, 0): []
+  (2, 3): [srv_4]
+  (3, 0): []
+  (3, 1): [srv_2]
+  (3, 2): [srv_2]
+step_limit: 1000

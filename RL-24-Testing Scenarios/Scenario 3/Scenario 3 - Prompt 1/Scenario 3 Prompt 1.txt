@@ -1,0 +1,3 @@
+Scenario 3 Prompt 1
+
+Generate a somewhat secure network with 3 subnets and 3 hosts

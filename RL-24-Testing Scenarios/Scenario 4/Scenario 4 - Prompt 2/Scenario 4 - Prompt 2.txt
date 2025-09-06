@@ -1,0 +1,3 @@
+Scenario 4 Prompt 1
+
+Generate an average secure network with 3 subnets and 3 hosts

@@ -1,0 +1,94 @@
+
+
+Scenario 1: Very public network, low security, 3 host, 3 sub
+
+subnets: [4, 1, 1]
+topology:
+ [[1, 1, 1, 1],
+ [1, 1, 1, 1],
+ [1, 1, 1, 1],
+ [1, 1, 1, 1]]
+
+sensitive_hosts:
+  (2, 0): 100
+  (3, 0): 100
+os:
+  - os_0
+  - os_1
+  - os_2
+services:
+  - srv_0
+  - srv_1
+processes:
+  - proc_0
+  - proc_1
+  - proc_2
+exploits:
+  e_srv_0_os_0:
+    service: srv_0
+    os: os_0
+    prob: 0.9
+    cost: 1
+    access: root
+  e_srv_1:
+    service: srv_1
+    os: None
+    prob: 0.9
+    cost: 1
+    access: root
+privilege_escalation:
+  pe_proc_1_os_1:
+    process: proc_1
+    os: os_1
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_0_os_0:
+    process: proc_0
+    os: os_0
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_proc_2_os_2:
+    process: proc_2
+    os: os_2
+    prob: 1.0
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: os_0
+    services: [srv_0]
+    processes: [proc_0]
+  (1, 1):
+    os: os_2
+    services: [srv_1]
+    processes: [proc_1, proc_2]
+  (1, 2):
+    os: os_2
+    services: [srv_1]
+    processes: [proc_1, proc_2]
+  (1, 3):
+    os: os_0
+    services: [srv_0]
+    processes: [proc_0]
+  (2, 0):
+    os: os_0
+    services: [srv_0]
+    processes: [proc_0]
+  (3, 0):
+    os: os_0
+    services: [srv_0]
+    processes: [proc_1, proc_2]
+firewall:
+  (0, 3): []
+  (1, 2): []
+  (2, 1): []
+  (2, 3): []
+  (3, 0): []
+  (3, 2): []
+step_limit: 1000
