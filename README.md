@@ -30,16 +30,16 @@ The aim of testing was to:
 </div>
 
 ---
-## :rocket: Results
-- NetGen was found to have limited comprehension of user-based prompts
-- Topologies were found to be generated randomly unless prompts were extremes of "insecure or secure"
-- Findings were given to the development team to improve documentation
-------
 ### :dart: Features
 
 - Conducted 50+ trials to test the accuracy and efficiency of the tool
 - Created 10 prompts to test NetGen's ability to comprehend user-based prompts based on security level
-- Formed a graph representing the security levels of the topologies created  
+- Formed a graph representing the security levels of the topologies created
+------
+## :rocket: Results
+- NetGen was found to have limited comprehension of user-based prompts
+- Topologies were found to be generated randomly unless prompts were extremes of "insecure or secure"
+- Findings were given to the development team to improve documentation
 ---
 
 ## :handshake: Contact
